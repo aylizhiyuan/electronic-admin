@@ -1,0 +1,4 @@
+server:
+  port: 8080
+  devPort : 9080
+  debugPort: 7080
