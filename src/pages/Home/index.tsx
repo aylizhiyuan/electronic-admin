@@ -6,7 +6,7 @@ import './index.scss'
 export default function Home() {
   return (
     <div>
-      <Button>btn</Button>
+      <Button>btn测试</Button>
     </div>
   )
 }

@@ -14,6 +14,5 @@ const render = (App: any) => {
 render(App)
 
 if (module.hot) {
-  console.log('是否执行了这个')
   module.hot.accept()
 }

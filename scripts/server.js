@@ -1,13 +1,9 @@
 const path = require('path')
 const fs = require('fs-extra')
 const yaml = require('js-yaml')
-const Promise = require('bluebird')
 const webpack = require('webpack')
 const ip = require('dev-ip')
-const bodyParser = require('body-parser')
-const WebpackDevServer = require('webpack-dev-server')
-
-Promise.promisifyAll(fs)
+const webpackDevServer = require('webpack-dev-server')
 
 const env = 'development'
 const devIp = ip()[0] || 'localhost'
@@ -19,5 +15,11 @@ const config = require(configPath)
 const appConfig = yaml.load(fs.readFileSync(appConfigPath))
 
 const entry = config.entry
-const devPort = appConfig.server.devPort
 
+const compiler = webpack(config)
+const devServerOptions = { ...config.devServer, open: true }
+const server = new webpackDevServer(devServerOptions, compiler)
+const runServer = async () => {
+  await server.start()
+}
+runServer()

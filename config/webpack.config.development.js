@@ -13,15 +13,20 @@ const appConfig = yaml.load(fs.readFileSync(appConfigPath))
 const devPort = appConfig.server.devPort
 module.exports = merge(baseConfig, {
   mode: 'development',
-  entry: {
-    hot: 'react-hot-loader/patch',
-  },
   output: {
     pathinfo: true,
     path: path.join(root, 'build'),
-    publicPath: `http://${devIp}:${devPort}/build/`, // 为了加载dev-server中的资源
+    publicPath: `http://${devIp}:${devPort}/`,
     filename: '[name].js',
     chunkFilename: '[name].js',
+  },
+  devServer: {
+    historyApiFallback: true, // 在使用单页面的项目中,最终都会转向请求根目录
+    hot: true,
+    devMiddleware: {
+      writeToDisk: false,
+    },
+    port: appConfig.server.devPort,
   },
   plugins: [
     new MiniCssExtractPlugin({
