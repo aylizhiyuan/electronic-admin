@@ -81,25 +81,24 @@ npm install -D eslint-plugin-react
 ### 6. 配置打包webpack 
 
 ```
-webpack5的版本，记录当前的版本号
+webpack保持在5的最新版本进行开发
 
-"webpack": "^4.46.0",
-"webpack-cli": "^4.9.1",
-"webpack-dev-server": "3.2.1",
+"webpack": "^5.67.0",
+"webpack-cli": "^4.9.2",
+"webpack-dev-server": "^4.7.3",
 "webpack-merge": "^5.8.0"
 
-"url-loader": "^1.1.2",
+"url-loader": "^4.1.1",
 "file-loader": "^6.2.0",
-"css-loader": "^5.2.7",
-"ts-loader": "^8.3.0",
-"style-loader": "^2.0.0",
+"css-loader": "^6.5.1",
+"ts-loader": "^9.2.6",
+"style-loader": "^3.3.1",
 "sass-loader": "^10.1.1",
 "react-hot-loader": "^4.8.0",
 
-"mini-css-extract-plugin": "^0.11.3",
-"html-webpack-plugin": "^4.5.2",
+"mini-css-extract-plugin": "^2.5.2",
+"html-webpack-plugin": "^5.5.0",
 
-webpack在4的版本下，需要将这些模块保持在当前版本下,预计升级会造成模块的构建失败及其他不可预见的问题
 ```
 
 ### 最后别忘了安装一些可供调用的类 & Interface 
