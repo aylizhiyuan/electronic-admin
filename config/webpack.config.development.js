@@ -25,6 +25,7 @@ module.exports = merge(baseConfig, {
     hot: true,
     devMiddleware: {
       writeToDisk: false,
+      publicPath: '/', // 意义
     },
     port: appConfig.server.devPort,
   },
